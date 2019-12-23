@@ -60,6 +60,15 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Text(
               'toHttp',
               style: TextStyle(fontSize: 28.0),
+            )
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/intro');
+            },
+            child: Text(
+              'toDart',
+              style: TextStyle(fontSize: 28.0),
             ),
           ),
         ],
