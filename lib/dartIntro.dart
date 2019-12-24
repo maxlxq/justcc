@@ -30,6 +30,69 @@ class _DartIntro extends State<DartIntro> {
   7 支持async/await异步处理。
   ''';
 
+  static const introDart3 = '''
+  1. 常量和固定值：const 、final，const 定义一个编译时的常量，final 定义的常量只能被设定一次；
+  2. 基本数据类型：Number、String、Boolean、List、Map
+  Number类型：int、double，操作：+、-、*、/及位移操作>>，常用方法：abs、ceil和floor。
+  String类型：单/双引号 表示字符串，三个单/双引号 包裹多行字符串
+  Boolean类型：强bool类型检查，只有bool类型的值是true时才认为是true
+  List类型：具有一系列相同类型的数据。类似JS中的数组对象，如：var list = [1,2,3];
+  Map类型：key/value 键值对，key必须唯一，如： var w = {}; or var w = new Map();
+  ''';
+
+  static const introDart4 = '''
+  函数，Dart是面向对象的语言，所以函数也是对象，属于Function对象。
+  函数可以像参数一样传递给其他函数，便于做回调处理。
+  1 可选参数：将参数用中括号[]括起来，用来表明是可选位置参数。其他参数是必传参数。
+  2 参数默认值：通常参数的默认值为null，可选参数可设默认值。[String from = 'China']
+  3 main函数：Flutter应用程序必须有一个main函数，作为程序的入口。
+  4 函数返回值：所有的函数都会有返回值；未指定返回值，默认返回值是null，并且会隐式添加return语句；
+  ''';
+
+  static const introDart5 = '''
+  运算符
+  1 一元后缀：++、--、()、[]、.、?.
+  2 一元前缀：-、!、~、++、--
+  3 乘除类型：*、/、%、～/
+  4 加减类型：+、-
+  5 移动位运算：<<、>>
+  6 位运算：&、｜、^
+  7 关系和类型测试：>=、<=、>、<、as[确定左值是右值类型时可简写as]、is[左值对象是相应类型]、is![左值对象不是相应类型] 
+  8 等式：==、!=
+  9 逻辑与：&&
+  10 逻辑或：||
+  11 条件：expr1 ? expr2 : expr3
+  12 级联：.. [类似JS中的Promise的then处理，目的是简写代码，严格来说，级联是Dart的语法，算不上运算符]
+  13 赋值：= *= /= ～/= %= += -= <<= >>= &= ^= |= ??=
+  ''';
+
+  static const introDart6 = '''
+  流程控制语句
+  1 if、else：if、else if、else
+  2 for：for(var i = 0; i < 5; i++) {} ；如果arr是可序列化的操作数 可简写为 for(var i in arr) {}
+  3 while和do-while
+  4 break和continue
+  5 switch和case：前后操作数必须是相同类型的对象实例；每个非空case必须break；
+  6 assert：assert(true) 继续执行；assert(false) 抛出断言错误异常AssertionError
+  7 try-catch和throw
+  ''';
+
+  static const introDart7 = '''
+  异常处理
+  Dart提供了异常和错误类型以及许多预定义的子类型，也可以定义自己的异常
+  1 抛出异常：可以报出任意对象：throw FormatException('抛出一个FormatException异常'); throw '数据非法';
+  2 捕获异常：可以指定一个或两个参数来捕获异常，第一个是抛出的异常，第二个是堆栈跟踪(StackTrace对象)
+  try {
+    ...
+  } on Exception catch (e) {
+    print('Exception details:\\n \$e');
+  } catch (e, s) {
+    print('Exception details:\\n \$e');
+    print('Stack trace:\\n \$s');
+  }
+  3 Finally 无论是否抛出异常，都能够执行，异常将在finally语句运行后传播
+  ''';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +103,11 @@ class _DartIntro extends State<DartIntro> {
         children: <Widget>[
           Text(introDart1),
           Text(introDart2),
+          Text(introDart3),
+          Text(introDart4),
+          Text(introDart5),
+          Text(introDart6),
+          Text(introDart7),
         ],
       ),
     );
