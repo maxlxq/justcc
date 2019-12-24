@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:justcc/dartIntro.dart';
 import 'package:justcc/homePage.dart';
 import 'package:justcc/firstPage.dart';
 import 'package:justcc/httpPage.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/second': (BuildContext context) => SecondPage(),
         '/url': (BuildContext context) => UrlPage(),
         '/http': (BuildContext context) => HttpPage(),
+        '/intro': (BuildContext context) => DartIntro(),
       },
       initialRoute: '/',
     );
