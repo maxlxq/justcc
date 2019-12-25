@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
+      body: ListView(
         children: <Widget>[
           RaisedButton(
             onPressed: () {
@@ -68,6 +68,15 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             child: Text(
               'toDart',
+              style: TextStyle(fontSize: 28.0),
+            ),
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/component');
+            },
+            child: Text(
+              'toComponent',
               style: TextStyle(fontSize: 28.0),
             ),
           ),

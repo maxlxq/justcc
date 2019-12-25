@@ -93,6 +93,145 @@ class _DartIntro extends State<DartIntro> {
   3 Finally 无论是否抛出异常，都能够执行，异常将在finally语句运行后传播
   ''';
 
+  static const introDart8 = '''
+  面向对象
+  Dart作为高级语言支持面向对象的很多特性，并且支持给予mixin的继承方式。
+  基于mixin的继承方式是指：一个类可以继承自多个父类，相当于其他语言里的多继承。所有的类都有同一个基类Object，一切皆为对象。如：var user = new User('zhang', 20);
+  1 实例化成员变量
+  定义一个User类，在类里添加两个成员变量 name 和 age。
+  class User {
+    String name;
+    int age;
+  }
+  类定义中所有的变量都会隐式的定义setter方法，针对非空的变量会额外增加getter方法。
+  2 构造函数
+  - 常规构造函数
+  class User {
+    String name;
+    int age;
+    User(String name, int age) {
+      this.name = name;
+      this.age = age;
+    }
+  }
+  可简写为
+  class User {
+    String name;
+    int age;
+    User(this.name, this.age);
+  }
+  - 命名的构造函数
+  class User {
+    String name;
+    int age;
+    User(this.name, this.age);
+    User.fromJson(Map json) {
+      name = json['name'];
+      age = json['age'];
+    }
+  }
+  - 构造函数初始化列表
+  3 读取和写入对象
+  4 重载操作
+  5 继承类 extends
+  6 抽象类 abstract，不具体实现方法，写好定义接口，交由调用的人实现
+  7 枚举类型 enum
+  enum Color {
+    red,
+    green,
+    blue
+  }
+  List<Color> colors = Color.values; // 获取枚举类中的所有值
+  8 Mixins 混入功能，相当于多继承，使用with关键字来实现Mixins功能
+  class S {
+    a() {print("S.a"); }
+  }
+  class A {
+    a() {print("A.a"); }
+    b() {pirnt("A.b"); }
+  }
+  class T = A with S;
+  main(List<Strings> args) {
+    T t = new T();
+    t.a();
+    t.b();
+  }
+  ''';
+
+  static const introDart9 = '''
+  泛型
+  范型通常是为了类型安全而设计的，适当地指定泛型类型会生成更好的代码，可以使用泛型来减少代码重复。
+  Dart中使用<T>的方式来定义泛型。如 List只包含字符串，声明为 List<String>
+  var names = new List<String>();
+  names.addAll(['zhang', 'san', 'si']);
+  1 用于泛型集合
+  泛型用于List和Map类型参数化：
+  List: <type>
+  Map: <keyType, valueType>
+  例：
+  var names = <String>['zhang', 'san', 'si'];
+  var weeks = <String, String>{
+    'Monday': '1',
+    'Tuesday': '2',
+    'Wednesday': '3',
+    'Thursday': '4',
+    'Friday': '5',
+    'Saturday': '6',
+    'Sunday': '7',
+  };
+  2 在构造函数中参数化
+  Map类型的例子如下：
+  var users = new Map<String, User>();
+  ''';
+
+  static const introDart10 = '''
+  库的使用
+  1 引用库
+  通过import语句在一个库中引用另一个库的文件。需要注意：
+    在import语句后面需要接上库文件的路径
+    对Dart语言提供的库文件使用dart:xx格式
+    第三方的库文件使用package:xx格式
+  2 指定一个库的前缀
+  命名空间 使用 as 防止引用不同库中的相同类
+  3 引用库的一部分
+  import 'package:lib1/lib1.dart' show foo; // 只引用foo
+  import 'package:lib2/lib2.dart' hide foo; // 除了foo其余都引用
+  ''';
+
+  static const introDart11 = '''
+  异步支持
+  async/await
+  Dart库提供asynchronous功能，该功能提供接口来进行耗费时间的操作，比如：文件读写、网络请求。该功能返回Future或Stream对象
+  获取返回的Future对象的值：使用async/await；使用Future提供的API；
+  获取返回的Stream对象的值：使用async/异步的循环await for；使用Stream相关API；
+  async 必须与 await 匹配使用
+  fileOperate () async {
+    var file = await readFile();
+    // other code
+  }
+  ''';
+
+  static const introDart12 = '''
+  元数据
+  使用元数据给代码添加更多的信息。
+  元数据是以@开始的修饰符，在@后面接着编译时的常量或调用一个常量构造函数。
+  @deprecated 被弃用的
+  @override 重写
+  @proxy 代理
+  ''';
+
+  static const introDart13 = '''
+  注释
+  单行注释 //
+  多行注释
+  /**
+    *
+    ...
+    *
+    */
+  文档注释 /// 或 /** 开头
+  ''';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,6 +247,12 @@ class _DartIntro extends State<DartIntro> {
           Text(introDart5),
           Text(introDart6),
           Text(introDart7),
+          Text(introDart8),
+          Text(introDart9),
+          Text(introDart10),
+          Text(introDart11),
+          Text(introDart12),
+          Text(introDart13),
         ],
       ),
     );

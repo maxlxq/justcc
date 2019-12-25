@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:justcc/componentPage.dart';
 import 'package:justcc/dartIntro.dart';
 import 'package:justcc/homePage.dart';
 import 'package:justcc/firstPage.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/url': (BuildContext context) => UrlPage(),
         '/http': (BuildContext context) => HttpPage(),
         '/intro': (BuildContext context) => DartIntro(),
+        '/component': (BuildContext context) => ComponentPage(),
       },
       initialRoute: '/',
     );
