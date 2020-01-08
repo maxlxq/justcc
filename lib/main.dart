@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:justcc/component/image.dart';
 import 'package:justcc/componentPage.dart';
 import 'package:justcc/dartIntro.dart';
 import 'package:justcc/homePage.dart';
@@ -6,6 +7,7 @@ import 'package:justcc/firstPage.dart';
 import 'package:justcc/httpPage.dart';
 import 'package:justcc/secondPage.dart';
 import 'package:justcc/urlPage.dart';
+import 'package:justcc/component/container.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
         '/http': (BuildContext context) => HttpPage(),
         '/intro': (BuildContext context) => DartIntro(),
         '/component': (BuildContext context) => ComponentPage(),
+        '/component/container': (BuildContext context) => ContainerPage(),
+        '/component/image': (BuildContext context) => ImagePage(),
       },
       initialRoute: '/',
     );

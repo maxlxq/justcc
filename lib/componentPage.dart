@@ -6,7 +6,7 @@ class ComponentPage extends StatefulWidget {
 }
 
 class _ComponentPage extends State<ComponentPage> {
-  static const name = 'Container';
+  static const name = 'Component';
 
   @override
   Widget build(BuildContext context) {
@@ -14,24 +14,63 @@ class _ComponentPage extends State<ComponentPage> {
       appBar: AppBar(
         title: Text(name),
       ),
-      body: Center(
-        child: Container(
-          width: 200.0,
-          height: 200.0,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: new Border.all(
-              color: Colors.grey,
-              width: 8.0,
+      body: ListView(
+        children: <Widget>[
+          RaisedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/component/container');
+            },
+            child: Text(
+              'container',
+              style: TextStyle(fontSize: 28.0),
             ),
-            borderRadius: const BorderRadius.all(const Radius.circular(8.0)),
           ),
-          child: Text(
-            'Flutter',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 28.0),
+          RaisedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/component/image');
+            },
+            child: Text(
+              'image',
+              style: TextStyle(fontSize: 28.0),
+            ),
           ),
-        ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/url');
+            },
+            child: Text(
+              'toUrl',
+              style: TextStyle(fontSize: 28.0),
+            ),
+          ),
+          RaisedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/http');
+              },
+              child: Text(
+                'toHttp',
+                style: TextStyle(fontSize: 28.0),
+              )
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/intro');
+            },
+            child: Text(
+              'toDart',
+              style: TextStyle(fontSize: 28.0),
+            ),
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/component');
+            },
+            child: Text(
+              'toComponent',
+              style: TextStyle(fontSize: 28.0),
+            ),
+          ),
+        ],
       ),
     );
   }
