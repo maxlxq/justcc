@@ -36,19 +36,19 @@ class _ComponentPage extends State<ComponentPage> {
           ),
           RaisedButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/url');
+              Navigator.pushNamed(context, '/component/text');
             },
             child: Text(
-              'toUrl',
+              'text',
               style: TextStyle(fontSize: 28.0),
             ),
           ),
           RaisedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/http');
+                Navigator.pushNamed(context, '/component/icon');
               },
               child: Text(
-                'toHttp',
+                'icon',
                 style: TextStyle(fontSize: 28.0),
               )
           ),

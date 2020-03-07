@@ -17,7 +17,12 @@ class _ImagePage extends State<ImagePage> {
       body: Center(
         child: new Image.network(
           'https://pier-qa.oss-cn-hangzhou.aliyuncs.com/static/img/icons/OpportunityEN.png',
-          fit: BoxFit.fitWidth,
+          width: 414.0,
+          height: 200.0,
+          // color: Colors.white38,
+          // colorBlendMode: BlendMode.difference,
+          repeat: ImageRepeat.repeatX,
+          fit: BoxFit.none,
         ),
       ),
     );

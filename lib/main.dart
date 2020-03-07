@@ -8,6 +8,8 @@ import 'package:justcc/httpPage.dart';
 import 'package:justcc/secondPage.dart';
 import 'package:justcc/urlPage.dart';
 import 'package:justcc/component/container.dart';
+import 'package:justcc/component/text.dart';
+import 'package:justcc/component/icon.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,6 +35,8 @@ class MyApp extends StatelessWidget {
         '/component': (BuildContext context) => ComponentPage(),
         '/component/container': (BuildContext context) => ContainerPage(),
         '/component/image': (BuildContext context) => ImagePage(),
+        '/component/text': (BuildContext context) => TextPage(),
+        '/component/icon': (BuildContext context) => IconPage(),
       },
       initialRoute: '/',
     );
